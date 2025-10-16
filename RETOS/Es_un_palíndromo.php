@@ -21,8 +21,9 @@
         $text = strtolower($text);
         $text = str_replace(
             array('á', 'é', 'í', 'ó', 'ú','ü','ñ'), 
-            array('a', 'e', 'i', 'o', 'u','u','n'), $textLowerCase);
-        $text = preg_replace('/[^a-z]/', "", $text);
+            array('a', 'e', 'i', 'o', 'u','u','n'), $text);
+        $text = preg_replace('/[^a-z0-9]/', "", $text);
+        
 
         return $text === strrev($text);
     }
@@ -30,6 +31,7 @@
     echo isPalindrome("Ana") . "<br>";
     echo isPalindrome("ana") . "<br>";
     echo isPalindrome("A man, a plan, a canal, Páñama") . "<br>";
+    echo isPalindrome("6285B3249", "<br>");
 
     ?>
 </body>
