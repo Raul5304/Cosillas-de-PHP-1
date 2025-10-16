@@ -18,7 +18,7 @@ o bien el que ocupa la última posición, pero no podría devolver los dos datos
 
     <?php
 
-        function arrayValues($array){
+        function arrayMinMaxMid($array){
             $min = min($array);
             $max = max($array);
             $mid = array_sum($array) / count($array);
@@ -27,10 +27,10 @@ o bien el que ocupa la última posición, pero no podría devolver los dos datos
 
         $arraynum = [2,4,6,8,10,12,14,16,18,20];
 
-        $arraySol = arrayValues($arraynum);
+        $solution = arrayMinMaxMid($arraynum);
 
-        foreach ($arraySol as $count){
-            echo $count;
+        foreach ($solution as $printArr){
+            echo $printArr;
         }
 
     ?>
