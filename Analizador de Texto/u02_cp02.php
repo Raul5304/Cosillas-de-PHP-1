@@ -28,10 +28,10 @@
     la del hombre contra sus propios demonios, la del bien resistiendo, una noche más, frente a la oscuridad."
     EOD;
 
-    $ignoredwords = ["a", "ante", "bajo", "cabe", "con", "contra", "de", "desde", "en", "entre", "hacia", "hasta", "para", "por", "según", "sin", "sobre", "tras", 
-    "y", "e", "ni", "pero", "porque", "aunque", "sin embargo", "es decir", "o", "u", "más", "el", "la", "un", "una", "unos", "unas", "los", "las", "lo", "la"];
-
-    $texto = strtolower($texto);
+    $ignoredwords = ['el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas', 'de', 'del', 'a', 'en', 'y', 'o', 'con', 'por', 'para', 'sin', 'sobre', 
+    'que', 'se', 'al', 'lo', 'su', 'sus', 'es', 'el', 'mi', 'tu', 'su', 'ya', 'pero', 'como', 'más', 'menos', 'muy', 'sí', 'no', 'ni', 'le', 'les', 'te', 'me', 
+    'nos', 'vosotros', 'vosotras', 'ellos', 'ellas', 'nosotros', 'nosotras', 'este', 'esta', 'estos', 'estas', 'ese', 'esa', 'esos', 'esas',
+    'aquel', 'aquella', 'aquellos', 'aquellas'];
 
     $textoarr = deleteChars($texto);
 

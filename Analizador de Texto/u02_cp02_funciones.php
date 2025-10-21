@@ -1,6 +1,7 @@
 <?php
 
 function deleteChars($texto){
+    $texto = strtolower($texto);
     $texto = str_replace("\n", " ", $texto);
     $array = explode(" ", $texto);
     foreach($array as &$arr){
