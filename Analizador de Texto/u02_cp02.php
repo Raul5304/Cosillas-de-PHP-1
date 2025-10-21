@@ -1,3 +1,4 @@
+<?php include('u02_cp02_funciones.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,8 @@
 <body>
     <?php
 
-    $texto = "Gotham City es una metrópolis oscura, gótica y corrupta, situada en el corazón de los Estados Unidos. Desde sus orígenes, ha sido un reflejo distorsionado de la sociedad 
+    $texto = <<<EOD
+    "Gotham City es una metrópolis oscura, gótica y corrupta, situada en el corazón de los Estados Unidos. Desde sus orígenes, ha sido un reflejo distorsionado de la sociedad 
     moderna: un lugar donde la desigualdad, el crimen y la desesperanza conviven bajo un cielo permanentemente cubierto de sombras. En sus calles, 
     el miedo se respira como el humo de sus fábricas, y la justicia parece siempre ir un paso por detrás del mal.
     En medio de este caos nació Bruce Wayne, el heredero de una de las familias más poderosas y respetadas de la ciudad. Siendo niño, fue testigo del asesinato de sus padres, 
@@ -24,8 +26,22 @@
     Con la ayuda del comisario Gordon, Alfred Pennyworth y, en ocasiones, Robin, intenta mantener viva una chispa de esperanza en una ciudad que parece condenada.
     Gotham es tanto su hogar como su prisión, una urbe que lo necesita tanto como lo teme. En el fondo, la historia de Batman y Gotham es la historia de una lucha eterna: 
     la del hombre contra sus propios demonios, la del bien resistiendo, una noche más, frente a la oscuridad."
+    EOD;
 
+    $ignoredwords = ["a", "ante", "bajo", "cabe", "con", "contra", "de", "desde", "en", "entre", "hacia", "hasta", "para", "por", "según", "sin", "sobre", "tras", 
+    "y", "e", "ni", "pero", "porque", "aunque", "sin embargo", "es decir", "o", "u", "más", "el", "la", "un", "una", "unos", "unas", "los", "las", "lo", "la"];
 
+    $texto = strtolower($texto);
+
+    $textoarr = deleteChars($texto);
+
+    $textoarr = deleteWords($textoarr, $ignoredwords);
+
+    $contarpalabras = countValues($textoarr);
+
+    $maxpalabras = maxWords($contarpalabras);
+
+    print_r($maxpalabras);
     ?>
 </body>
 </html>
